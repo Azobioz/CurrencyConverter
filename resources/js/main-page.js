@@ -1,4 +1,5 @@
-function toggleButton() {
-    document.getElement("hidden").classList.toggle("show");
+function toggleButton(button) {
+    const ul = button.nextElementSibling;
+    ul.classList.toggle("show");
 }
 

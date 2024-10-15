@@ -1,0 +1,11 @@
+#list-container {
+    display: none; /* Скрываем список по умолчанию */
+}
+
+#list-container.visible {
+    display: block; /* Показываем список, когда он имеет класс 'visible' */
+}
+
+#other-block {
+    margin-top: 20px; /* Добавляем отступ для наглядности */
+}

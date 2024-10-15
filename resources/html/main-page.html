@@ -8,32 +8,36 @@
 </head>
 <body>
 <div class="container">
-    <button onclick="toggleButton()" class="label1"></button>
-    <ul class="hidden">
-        <div class="currency-type-first">
-            <div class="currency-text">
-                <li>dollar</li>
-                <li>ruble</li>
+    <div class="currency-block-wrapper1">
+        <button onclick="toggleButton(this)" class="label"></button>
+        <ul class="hidden">
+            <div class="currency-type">
+                <div class="currency-text">
+                    <button class="currency-list-text">dollar</button>
+                    <button class="currency-list-text">ruble</button>
+                </div>
             </div>
+        </ul>
+        <div class="currency-block">
+            <div class="icon">$</div>
+            <input class="value">
         </div>
-    </ul>
-
-    <div class="currency-block">
-        <div class="icon">$</div>
-        <input class="value">
     </div>
-    <button onclick="toggleButton()" class="label2"></button>
-    <ul  class="hidden">
-        <div class="currency-type-second">
-            <div class="currency-text">
-                <li>dollar</li>
-                <li>ruble</li>
+
+    <div class="currency-block-wrapper2">
+        <button onclick="toggleButton(this)" class="label"></button>
+        <ul class="hidden">
+            <div class="currency-type">
+                <div class="currency-text">
+                    <button class="currency-list-text">dollar</button>
+                    <button class="currency-list-text">ruble</button>
+                </div>
             </div>
+        </ul>
+        <div class="currency-block">
+            <div class="icon">₽</div>
+            <input class="value">
         </div>
-    </ul>
-    <div class="currency-block">
-        <div class="icon">₽</div>
-        <input class="value">
     </div>
 </div>
 <button class="exchange-circle">
