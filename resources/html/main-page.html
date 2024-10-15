@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Exchange</title>
+    <link rel="stylesheet" href="/css/main-page.css">
+</head>
+<body>
+<div class="container">
+    <button onclick="toggleButton()" class="label1"></button>
+    <ul id="dropdown-list" class="hidden">
+        <div class="currency-type-first">
+            <li>dollar</li>
+            <li>ruble</li>
+        </div>
+    </ul>
+
+    <div class="currency-block">
+        <div class="icon">$</div>
+        <input class="value">
+    </div>
+    <div class="label2">
+        <div class="currency-type-second">ruble</div>
+    </div>
+    <div class="currency-block">
+        <div class="icon">₽</div>
+        <input class="value">
+    </div>
+</div>
+<button class="exchange-circle">
+    <div class="icon">⇄</div>
+</button>
+
+<script src="/js/main-page.js"></script>
+</body>
+</html>

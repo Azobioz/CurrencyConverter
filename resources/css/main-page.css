@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #565651;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+}
+
+.currency-block {
+    background-color: #EEAF4A;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 30px;
+    width: 100px;
+    height: 150px;
+
+}
+
+.label1 {
+    background-color: #D9D9D9;
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    top: 330px;
+    left: 775px;
+}
+
+.label2 {
+    background-color: #D9D9D9;
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    top: 330px;
+    left: 975px
+}
+
+.currency-type-first {
+    font-size: 30px;
+    margin-top: 7px;
+    margin-left: 12px;
+}
+
+.currency-type-second {
+    font-size: 30px;
+    margin-top: 7px;
+    margin-left: 18px;
+}
+
+.icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+input {
+    outline: none;
+
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+.show {
+    display: block;
+}
+
+.value {
+    background-color: #C4C4C4;
+    width: 70px;
+    height: 30px;
+    border-radius: 20px;
+    font-size: 18px;
+    position: absolute;
+    margin-left: -33px;
+    margin-top: 30px;
+    border: none;
+}
+
+
+
+.exchange-circle {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: #B1CD95;
+    height: 70px;
+    width: 70px;
+    display: flex;
+    justify-content: center; /* Горизонтальное выравнивание по центру */
+    align-items: center; /* Вертикальное выравнивание по центру */
+    border-radius: 50px;
+    position: relative;
+    right: 185px;
+}
+
+.exchange-circle .icon {
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+li {
+    list-style-type: none;
+}
