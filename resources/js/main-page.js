@@ -1,4 +1,4 @@
 function toggleButton() {
-    document.getElementById("dropdown-list").classList.toggle("show");
+    document.getElement("hidden").classList.toggle("show");
 }
 

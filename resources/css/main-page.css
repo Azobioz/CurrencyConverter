@@ -117,6 +117,7 @@ button {
     font-size: 30px;
 }
 
-li {
+.currency-text {
     list-style-type: none;
+
 }
