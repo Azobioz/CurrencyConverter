@@ -2,21 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Selector</title>
     <link rel="stylesheet" href="/css/test.css">
 </head>
 <body>
-<button id="toggle-button">Открыть список</button>
-<div id="list-container" class="hidden">
-  <ul>
-    <li>Пункт 1</li>
-    <li>Пункт 2</li>
-    <li>Пункт 3</li>
-  </ul>
+
+<div class="currency-container">
+    <div class="currency-box" id="currency-box-left">
+        <button class="currency-button" id="currency-button-left" onclick="toggleDropdown(this)">USD</button>
+        <div class="currency-dropdown" id="currency-dropdown-left">
+            <div onclick="selectCurrency('USD', 'left')">USD</div>
+            <div onclick="selectCurrency('RUB', 'left')">RUB</div>
+            <div onclick="selectCurrency('AUD', 'left')">AUD</div>
+            <div onclick="selectCurrency('BTS', 'left')">BTS</div>
+        </div>
+        <input type="text" value="" id="left-value">
+    </div>
+
+    <div class="swap-icon">⇄</div>
+
+    <div class="currency-box" id="currency-box-right">
+        <button class="currency-button" id="currency-button-right" onclick="toggleDropdown(this)">USD</button>
+        <div class="currency-dropdown" id="currency-dropdown-right">
+            <div onclick="selectCurrency('USD', 'right')">USD</div>
+            <div onclick="selectCurrency('RUB', 'right')">RUB</div>
+            <div onclick="selectCurrency('AUD', 'right')">AUD</div>
+            <div onclick="selectCurrency('BTS', 'right')">BTS</div>
+        </div>
+        <input type="text" value="" id="right-value">
+    </div>
+
+<!--    <div class="currency-box" id="currency-box-right">-->
+<!--        <button class="currency-button" id="currency-button-right">USD</button>-->
+<!--        <input type="text" value="240" id="right-value">-->
+<!--    </div>-->
 </div>
-<div id="other-block">
-  Это другой блок, который не должен менять позицию.
-</div>
-  <script src="/js/test.js"></script>
+
+<script src="/js/test.js"></script>
+
 </body>
 </html>
