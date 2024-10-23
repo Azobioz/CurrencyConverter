@@ -1,5 +1,7 @@
-const url = '';
+import { key } from './apiKey'
 
+const url = key;
+console.log(url)
 
 function toggleDropdown(button) {
     let currencyList = null
@@ -9,6 +11,8 @@ function toggleDropdown(button) {
     else {
         currencyList = document.getElementById('currency-dropdown-right');
     }
+
+    currencyList.innerHTML = ''
 
     fetch(url)
         .then(response => {
@@ -24,18 +28,19 @@ function toggleDropdown(button) {
 
                 currency.addEventListener('click', () => selectCurrency(button, currencyCode));
                 currency.addEventListener('click', () => {
-                    if (button.id === "currency-button-left") {
-                        setCurrencyValueAndCalculate(document.getElementById("left-value"));
-                    }
-                    else {
-                        setCurrencyValueAndCalculate(document.getElementById("right-value"));
-                    }
+                    // if (button.id === "currency-button-left") {
+                    //     setCurrencyValueAndCalculate(document.getElementById("left-value"));
+                    // }
+                    // else {
+                    //     setCurrencyValueAndCalculate(document.getElementById("right-value"));
+                    // }
                 });
                 currencyList.appendChild(currency);
 
 
             }
         })
+
 
 
     var dropdown = null;
@@ -53,7 +58,6 @@ function selectCurrency(button, currencyName) {
 
     button.textContent = currencyName;
 
-    // Скрываем выпадающий список после выбора
     if (button.id === "currency-button-left") {
         document.getElementById("currency-dropdown-left").style.display = "none";
     }
@@ -66,7 +70,7 @@ function selectCurrency(button, currencyName) {
 function setCurrencyValueAndCalculate(input) {
 
     if (input.id === "left-value") {
-
+        let leftInput = document.getElementById("left-value");
         fetch(url)
             .then(response => {
                 if (!response.ok) {
@@ -79,13 +83,16 @@ function setCurrencyValueAndCalculate(input) {
 
                 const exchangeRate = data.conversion_rates[currencyType];
 
-                input.value = exchangeRate;
+
 
                 const rightInput = document.getElementById("right-value");
-                rightInput.value = exchangeRate * data.conversion_rates[document.getElementById("currency-button-right").textContent];
+                rightInput.value = ((exchangeRate * leftInput.value) * data.conversion_rates[document.getElementById("currency-button-right").textContent]).toFixed(2);
+
+
             })
     }
-    else {
+    else if (input.id === "right-value"){
+        let rightInput = document.getElementById("right-value");
         fetch(url)
             .then(response => {
                 if (!response.ok) {
@@ -98,10 +105,11 @@ function setCurrencyValueAndCalculate(input) {
 
                 const exchangeRate = data.conversion_rates[currencyType];
 
-                input.value = exchangeRate
 
                 const leftInput = document.getElementById("left-value");
-                leftInput.value = exchangeRate * data.conversion_rates[document.getElementById("currency-button-left").textContent];
+                leftInput.value = ((exchangeRate * rightInput.value) * data.conversion_rates[document.getElementById("currency-button-left").textContent]).toFixed(2);
+
+
             })
     }
 

@@ -12,7 +12,7 @@
     <div class="currency-box" id="currency-box-left">
         <button class="currency-button" id="currency-button-left" onclick="toggleDropdown(this)">USD</button>
         <div class="currency-dropdown" id="currency-dropdown-left"></div>
-        <input type="text" value="" id="left-value">
+        <input type="text" value="1" id="left-value" oninput="setCurrencyValueAndCalculate(this)">
     </div>
 
     <div class="swap-icon">⇄</div>
@@ -20,7 +20,7 @@
     <div class="currency-box" id="currency-box-right">
         <button class="currency-button" id="currency-button-right" onclick="toggleDropdown(this)">USD</button>
         <div class="currency-dropdown" id="currency-dropdown-right"></div>
-        <input type="text" value="" id="right-value">
+        <input type="text" value="1" id="right-value" oninput="setCurrencyValueAndCalculate(this)">
     </div>
 
 </div>

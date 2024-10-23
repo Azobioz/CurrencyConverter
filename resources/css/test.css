@@ -7,6 +7,7 @@ body {
     margin: 0;
 }
 
+
 .currency-container {
     display: flex;
     align-items: center;
@@ -31,15 +32,15 @@ body {
 .currency-dropdown {
     position: absolute;
     top: 50px;
-    left: 10px;
+    left: 27px;
     display: none;
     background-color: #f1a43b;
-    border-radius: 10px;
     overflow: hidden;
 }
 
 .currency-dropdown div {
-    padding: 10px;
+    z-index: -1;
+    padding: 7px;
     cursor: pointer;
 }
 
@@ -60,5 +61,4 @@ input {
     font-size: 24px;
     color: #8bc34a;
     padding: 0 10px;
-    cursor: pointer;
 }
