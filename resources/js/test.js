@@ -1,6 +1,6 @@
-import { key } from './apiKey'
 
-const url = key;
+
+const url = ''; // key url
 console.log(url)
 
 function toggleDropdown(button) {
@@ -28,12 +28,12 @@ function toggleDropdown(button) {
 
                 currency.addEventListener('click', () => selectCurrency(button, currencyCode));
                 currency.addEventListener('click', () => {
-                    // if (button.id === "currency-button-left") {
-                    //     setCurrencyValueAndCalculate(document.getElementById("left-value"));
-                    // }
-                    // else {
-                    //     setCurrencyValueAndCalculate(document.getElementById("right-value"));
-                    // }
+                    if (button.id === "currency-button-left") {
+                        setCurrencyValueAndCalculate(document.getElementById("left-value"));
+                    }
+                    else {
+                        setCurrencyValueAndCalculate(document.getElementById("right-value"));
+                    }
                 });
                 currencyList.appendChild(currency);
 
@@ -84,7 +84,6 @@ function setCurrencyValueAndCalculate(input) {
                 const exchangeRate = data.conversion_rates[currencyType];
 
 
-
                 const rightInput = document.getElementById("right-value");
                 rightInput.value = ((exchangeRate * leftInput.value) * data.conversion_rates[document.getElementById("currency-button-right").textContent]).toFixed(2);
 
@@ -103,11 +102,12 @@ function setCurrencyValueAndCalculate(input) {
             .then(data => {
                 const currencyType = document.getElementById("currency-button-right").textContent;
 
-                const exchangeRate = data.conversion_rates[currencyType];
-
-
+                const exchangeRateRight = data.conversion_rates[currencyType];
+                const exchangeRateLeft = data.conversion_rates[document.getElementById("currency-button-left").textContent];
                 const leftInput = document.getElementById("left-value");
-                leftInput.value = ((exchangeRate * rightInput.value) * data.conversion_rates[document.getElementById("currency-button-left").textContent]).toFixed(2);
+                const rightInput = document.getElementById("right-value");
+
+                leftInput.value = ((exchangeRateLeft / exchangeRateRight) * rightInput.value).toFixed(2);
 
 
             })
